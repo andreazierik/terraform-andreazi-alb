@@ -1,0 +1,26 @@
+name: tflint
+on:
+  pull_request:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform-fmt:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup TFLint
+        uses: terraform-linters/setup-tflint@v4
+        with:
+          tflint_version: v0.44.1
+
+      - name: tflint init
+        run: tflint --init
+
+      - name: Run tflint
+        run: tflint --recursive --config "$(pwd)/.tflint.hcl"

@@ -13,9 +13,9 @@ provider "aws" {
 
   default_tags {
     tags = {
-        Automation = "true"
-        Environment = var.environment
-        Owner = "terraform"
+      Automation  = "true"
+      Environment = var.environment
+      Owner       = "terraform"
     }
   }
 }
