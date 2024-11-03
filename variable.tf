@@ -6,12 +6,12 @@ variable "environment" {
 
 variable "default_vpc" {
   description = "Nome da VPC padrao da conta"
-  default     = "vpc-andreazi"
-  type        = string
+  default     = ["vpc-andreazi"]
+  type        = list(string)
 }
 
 variable "public_subnets" {
   description = "Subnets publicas"
   default     = ["Public-Subnet-*"]
-  type        = string
+  type        = list(string)
 }
