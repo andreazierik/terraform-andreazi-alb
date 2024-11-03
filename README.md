@@ -34,6 +34,3 @@
 | <a name="output_aws_subnets"></a> [aws\_subnets](#output\_aws\_subnets) | n/a |
 | <a name="output_aws_vpcs"></a> [aws\_vpcs](#output\_aws\_vpcs) | n/a |
 <!-- END_TF_DOCS -->
-
-# Infrastructure Diagram
-Para ver o diagrama de infraestrutura, [clique aqui](DIAGRAM.md).
