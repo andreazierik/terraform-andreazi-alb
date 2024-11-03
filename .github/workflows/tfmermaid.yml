@@ -3,7 +3,7 @@ on:
   pull_request:
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 
 jobs:
@@ -14,16 +14,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: asannou/tfmermaid-action@v1
+      - name: Generate Terraform Diagram in DIAGRAM.md
+        uses: asannou/tfmermaid-action@v1
         with:
-          file: DIAGRAM.md
-      - name: commit
-        run: |
-          git add DIAGRAM.md
-          if ! git diff --cached --quiet --exit-code
-          then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git commit -m "generated"
-            git push
-          fi
+          tf: true
+          output-file: DIAGRAM.md
+          git-push: "true"
+          git-commit-message: "tfmermaid: automated action"
