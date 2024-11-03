@@ -1,6 +1,12 @@
 formatter: "markdown table"
 output:
   file: "README.md"
+sections:
+  show:
+    - requirements
+    - providers
+    - resources
+    - inputs
 settings:
   anchor: true
   color: true
