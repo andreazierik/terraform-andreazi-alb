@@ -1,0 +1,8 @@
+formatter: "markdown table"
+output:
+  file: "README.md"
+settings:
+  anchor: true
+  color: true
+  hide-empty: true
+  lockfile: true

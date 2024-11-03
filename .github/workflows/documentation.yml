@@ -3,7 +3,7 @@ on:
   - pull_request
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 
 jobs:
@@ -19,6 +19,7 @@ jobs:
       uses: terraform-docs/gh-actions@v1.3.0
       with:
         working-dir: .
-        output-file: README.md
+        config-file: .terraform-docs.yml
         output-method: inject
         git-push: "true"
+        git-commit-message: "terraform-docs: automated action"
