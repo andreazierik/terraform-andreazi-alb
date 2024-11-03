@@ -19,6 +19,7 @@ jobs:
       uses: terraform-docs/gh-actions@v1.3.0
       with:
         working-dir: .
-        output-file: README.md
+        config-file: .github/.terraform-docs.yml
         output-method: inject
         git-push: "true"
+        git-commit-message: "terraform-docs: automated action"
