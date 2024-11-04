@@ -11,3 +11,8 @@ data "aws_subnets" "public_subnets" {
     values = var.public_subnets
   }
 }
+
+data "aws_route53_zone" "aws_andreazi" {
+  name         = var.aws_andreazi
+  private_zone = false
+}
