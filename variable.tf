@@ -15,3 +15,21 @@ variable "public_subnets" {
   default     = ["Public-Subnet-*"]
   type        = list(string)
 }
+
+variable "projeto" {
+  description = "Nome padrao do projeto"
+  default     = "andreazi"
+  type        = string
+}
+
+variable "aws_andreazi" {
+  description = "Dominio padrao hospedado na AWS"
+  default     = "aws.andreazi.com.br"
+  type        = string
+}
+
+variable "erik" {
+  description = "IP publico de casa"
+  default     = ["45.230.103.152/32"]
+  type        = list(string)
+}
