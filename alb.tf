@@ -1,5 +1,5 @@
 resource "aws_security_group" "aws_alb_sg" {
-  name = "${var.projeto}-${var.environment}-alb-sg"
+  name   = "${var.projeto}-${var.environment}-alb-sg"
   vpc_id = data.aws_vpcs.default_vpc.id[0]
 
   tags = {
@@ -48,7 +48,7 @@ resource "aws_lb_target_group" "deny_tg" {
   target_type = "ip"
 
   health_check {
-    enabled             = false
+    enabled = false
   }
 }
 
@@ -58,7 +58,7 @@ resource "aws_lb_listener" "http_listener" {
   port              = 80
   protocol          = "HTTP"
   default_action {
-    type             = "fixed-response"
+    type = "fixed-response"
     fixed_response {
       content_type = "text/plain"
       message_body = "Access Denied"
@@ -76,7 +76,7 @@ resource "aws_lb_listener" "https_listener" {
   certificate_arn   = aws_acm_certificate.cert.arn
 
   default_action {
-    type             = "fixed-response"
+    type = "fixed-response"
     fixed_response {
       content_type = "text/plain"
       message_body = "Access Denied"
