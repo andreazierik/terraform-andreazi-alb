@@ -41,10 +41,10 @@ resource "aws_lb" "example_alb" {
 }
 
 resource "aws_lb_target_group" "deny_tg" {
-  name        = "${var.projeto}-deny"
-  port        = 80
-  protocol    = "HTTP"
-  vpc_id      = data.aws_vpcs.default_vpc.ids[0]
+  name     = "${var.projeto}-deny"
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = data.aws_vpcs.default_vpc.ids[0]
 
   health_check {
     enabled = false
