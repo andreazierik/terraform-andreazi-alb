@@ -1,6 +1,6 @@
 resource "aws_security_group" "aws_alb_sg" {
   name   = "${var.projeto}-${var.environment}-alb-sg"
-  vpc_id = data.aws_vpcs.default_vpc.id[0]
+  vpc_id = data.aws_vpcs.default_vpc.ids[0]
 
   tags = {
     Name = "${var.projeto}-${var.environment}-alb-sg"
@@ -41,11 +41,10 @@ resource "aws_lb" "example_alb" {
 }
 
 resource "aws_lb_target_group" "deny_tg" {
-  name        = "${var.projeto}-deny"
-  port        = 80
-  protocol    = "HTTP"
-  vpc_id      = data.aws_vpcs.default_vpc.id[0]
-  target_type = "ip"
+  name     = "${var.projeto}-deny"
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = data.aws_vpcs.default_vpc.ids[0]
 
   health_check {
     enabled = false
