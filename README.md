@@ -30,7 +30,7 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_aws_andreazi"></a> [aws\_andreazi](#input\_aws\_andreazi) | Dominio padrao hospedado na AWS | `string` | `"aws.andreazi.com.br"` | no |
+| <a name="input_aws_andreazi"></a> [aws\_andreazi](#input\_aws\_andreazi) | Dominio padrao hospedado na AWS | `string` | `"aws.andreazi.com"` | no |
 | <a name="input_default_vpc"></a> [default\_vpc](#input\_default\_vpc) | Nome da VPC padrao da conta | `list(string)` | <pre>[<br/>  "vpc-andreazi"<br/>]</pre> | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | TAG para definir qual ambiente sera provisionado | `string` | `"production"` | no |
 | <a name="input_erik"></a> [erik](#input\_erik) | IP publico de casa | `list(string)` | <pre>[<br/>  "45.230.103.152/32"<br/>]</pre> | no |

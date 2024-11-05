@@ -24,7 +24,7 @@ variable "projeto" {
 
 variable "aws_andreazi" {
   description = "Dominio padrao hospedado na AWS"
-  default     = "aws.andreazi.com.br"
+  default     = "aws.andreazi.com"
   type        = string
 }
 
