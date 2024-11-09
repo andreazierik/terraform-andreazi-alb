@@ -36,4 +36,5 @@
 | <a name="input_erik"></a> [erik](#input\_erik) | IP publico de casa | `list(string)` | <pre>[<br/>  "45.230.103.152/32"<br/>]</pre> | no |
 | <a name="input_projeto"></a> [projeto](#input\_projeto) | Nome padrao do projeto | `string` | `"andreazi"` | no |
 | <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | Subnets publicas | `list(string)` | <pre>[<br/>  "Public-Subnet-*"<br/>]</pre> | no |
+| <a name="input_tg_default_action"></a> [tg\_default\_action](#input\_tg\_default\_action) | Regra padrao dos listeners | `list(string)` | <pre>[<br/>  "text/plain",<br/>  "Access Denied",<br/>  "403"<br/>]</pre> | no |
 <!-- END_TF_DOCS -->

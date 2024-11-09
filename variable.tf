@@ -33,3 +33,9 @@ variable "erik" {
   default     = ["45.230.103.152/32"]
   type        = list(string)
 }
+
+variable "tg_default_action" {
+  description = "Regra padrao dos listeners"
+  default     = ["text/plain", "Access Denied", "403"]
+  type        = list(string)
+}
