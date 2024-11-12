@@ -14,7 +14,7 @@ resource "aws_security_group_rule" "aws_ecs_sg_http" {
   from_port         = 80
   to_port           = 80
   protocol          = "tcp"
-  prefix_list_ids   = [aws_security_group.aws_alb_sg.id]
+  source_security_group_id   = aws_security_group.aws_alb_sg.id
   security_group_id = aws_security_group.aws_ecs_sg.id
 }
 
@@ -24,7 +24,7 @@ resource "aws_security_group_rule" "aws_ecs_sg_https" {
   from_port         = 443
   to_port           = 443
   protocol          = "tcp"
-  prefix_list_ids   = [aws_security_group.aws_alb_sg.id]
+  source_security_group_id   = aws_security_group.aws_alb_sg.id
   security_group_id = aws_security_group.aws_ecs_sg.id
 }
 
@@ -73,11 +73,11 @@ resource "aws_ecs_task_definition" "ecs_task" {
 
   container_definitions = jsonencode([{
     name      = "${var.projeto}-${var.environment}-pdf"
-    image     = "nginx:latest"
+    image     = "frooodle/s-pdf:latest"
     essential = true
     portMappings = [{
-      containerPort = 80
-      hostPort      = 80
+      containerPort = 8080
+      hostPort      = 8080
     }]
   }])
 }
