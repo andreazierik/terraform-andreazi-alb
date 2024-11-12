@@ -33,10 +33,11 @@ resource "aws_ecs_cluster" "ecs_cluster" {
 }
 
 resource "aws_lb_target_group" "ecs_tg" {
-  name     = "${var.projeto}-${var.environment}-ecs-tg"
-  port     = 80
-  protocol = "HTTP"
-  vpc_id   = data.aws_vpcs.default_vpc.ids[0]
+  name        = "${var.projeto}-${var.environment}-ecs-tg"
+  port        = 80
+  protocol    = "HTTP"
+  vpc_id      = data.aws_vpcs.default_vpc.ids[0]
+  target_type = "ip"
 
   health_check {
     enabled             = true
