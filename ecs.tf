@@ -9,23 +9,23 @@ resource "aws_security_group" "aws_ecs_sg" {
 }
 
 resource "aws_security_group_rule" "aws_ecs_sg_http" {
-  description       = "Allow HTTP"
-  type              = "ingress"
-  from_port         = 80
-  to_port           = 80
-  protocol          = "tcp"
-  prefix_list_ids   = [aws_security_group.aws_alb_sg.id]
-  security_group_id = aws_security_group.aws_ecs_sg.id
+  description              = "Allow HTTP"
+  type                     = "ingress"
+  from_port                = 80
+  to_port                  = 80
+  protocol                 = "tcp"
+  source_security_group_id = aws_security_group.aws_alb_sg.id
+  security_group_id        = aws_security_group.aws_ecs_sg.id
 }
 
 resource "aws_security_group_rule" "aws_ecs_sg_https" {
-  description       = "Allow HTTPS"
-  type              = "ingress"
-  from_port         = 443
-  to_port           = 443
-  protocol          = "tcp"
-  prefix_list_ids   = [aws_security_group.aws_alb_sg.id]
-  security_group_id = aws_security_group.aws_ecs_sg.id
+  description              = "Allow HTTPS"
+  type                     = "ingress"
+  from_port                = 443
+  to_port                  = 443
+  protocol                 = "tcp"
+  source_security_group_id = aws_security_group.aws_alb_sg.id
+  security_group_id        = aws_security_group.aws_ecs_sg.id
 }
 
 resource "aws_ecs_cluster" "ecs_cluster" {
@@ -76,8 +76,8 @@ resource "aws_ecs_task_definition" "ecs_task" {
     image     = "nginx:latest"
     essential = true
     portMappings = [{
-      containerPort = 80
-      hostPort      = 80
+      containerPort = 8080
+      hostPort      = 8080
     }]
   }])
 }
