@@ -76,7 +76,7 @@ resource "aws_ecs_task_definition" "ecs_task" {
     image     = "frooodle/s-pdf:latest"
     essential = true
     portMappings = [{
-      containerPort = 8080
+      containerPort = 80
       hostPort      = 80
     }]
   }])
