@@ -73,7 +73,7 @@ resource "aws_ecs_task_definition" "ecs_task" {
 
   container_definitions = jsonencode([{
     name      = "${var.projeto}-${var.environment}-pdf"
-    image     = "frooodle/s-pdf:latest"
+    image     = "nginx:latest"
     essential = true
     portMappings = [{
       containerPort = 80
@@ -96,7 +96,7 @@ resource "aws_ecs_service" "ecs_service" {
 
   load_balancer {
     target_group_arn = aws_lb_target_group.ecs_tg.arn
-    container_name   = "${var.projeto}-${var.environment}-pdf--container"
+    container_name   = "${var.projeto}-${var.environment}-pdf-container"
     container_port   = 80
   }
 
