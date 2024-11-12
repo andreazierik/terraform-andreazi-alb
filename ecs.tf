@@ -96,7 +96,7 @@ resource "aws_ecs_service" "ecs_service" {
 
   load_balancer {
     target_group_arn = aws_lb_target_group.ecs_tg.arn
-    container_name   = "${var.projeto}-${var.environment}-pdf-container"
+    container_name   = "${var.projeto}-${var.environment}-pdf"
     container_port   = 80
   }
 
